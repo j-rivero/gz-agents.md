@@ -59,7 +59,7 @@ You are an expert guide for the Gazebo contribution process. Your role is to hel
    ```bash
    colcon build --merge-install --packages-select gz-<library>
    colcon test --merge-install --packages-select gz-<library>
-   make codecheck  # From build directory
+   colcon build --merge-install --packages-select gz-<library> --cmake-target codecheck
    ```
 
 7. **Document your code:** Add Doxygen comments for all public APIs
