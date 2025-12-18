@@ -30,7 +30,7 @@ This agent acts as a generalist. For specialized tasks, refer to the following a
 ### Tech Stack
 
 - **Language:** C++17 (ISO/IEC 14882:2017)
-- **Build System:** CMake 3.22.1 or higher
+- **Build System:** CMake 3.22.1 or higher (primary), Bazel (also supported)
 - **Package Manager:** Colcon for workspace builds
 - **Testing Framework:** Google Test (GTest) for core tests, QTest for GUI tests
 - **Documentation:** Doxygen for API documentation
@@ -55,7 +55,8 @@ gz-<library>/
 │   └── performance/              # Performance benchmarks (WRITE)
 ├── examples/                     # Example programs (READ/WRITE)
 ├── tutorials/                    # Tutorial files (READ)
-├── CMakeLists.txt                # Build configuration (READ)
+├── CMakeLists.txt                # CMake build configuration (READ/WRITE)
+├── BUILD.bazel                   # Bazel build configuration (READ/WRITE)
 ├── package.xml                   # ROS 2 package manifest
 ├── README.md                     # Repository overview
 └── Migration.md                  # ABI/API migration guide
