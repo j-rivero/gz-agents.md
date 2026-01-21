@@ -63,6 +63,13 @@ gz-<library>/
 
 ```
 
+### Repository stable branches and supported branches
+
+The repositories contains stable/release branches (gz-{lib_name}{major_version}), that are supported branches and the main branch is a supported branch.
+Other branches are not supported and should never be used to code on them.
+
+For a list of supported branches check https://raw.githubusercontent.com/gazebo-tooling/release-tools/refs/heads/master/jenkins-scripts/dsl/gz-collections.yaml
+
 ### Colcon Workspace Pattern
 
 Gazebo libraries are typically developed in colcon workspaces:
@@ -107,6 +114,14 @@ Some Gazebo libraries provide Python bindings (gz-math, gz-sim, etc.):
 - **Tutorials:** Written in Markdown, live in each library's `tutorials/` directory
 - **Migration guides:** `Migration.md` in each library documents breaking changes between versions
 
+### Commits and pull requests
+
+1. **Create features/fix branches named {user}/{feature_or_fix}**
+2. **Sign commits** with DCO (`git commit -s`)
+3. **Commits messages** should include a text "Generated-by: {claude-model-used}"
+4. **Never add the Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"** to commits
+5. **Pull requests descriptions** use templates defined per repository, use them
+
 ---
 
 ## Boundaries: What to Do, Ask, and Never Do
@@ -117,11 +132,11 @@ These boundaries apply to ALL agents and tasks. Specialized agents have addition
 
 **Safe, expected actions that should be done automatically:**
 
-1. **Run tests** before suggesting code changes are complete
-2. **Check code style** with `make codecheck` or linters
-3. **Add Doxygen documentation** to all public APIs you create or modify
-4. **Sign commits** with DCO (`git commit -s`)
-5. **Check for compiler warnings** and fix them (zero warnings policy)
+- **Run tests** before suggesting code changes are complete
+- **Check code style** with `make codecheck` or linters
+- **Add Doxygen documentation** to all public APIs you create or modify
+- **Check for compiler warnings** and fix them (zero warnings policy)
+- **Check if the branch is a supported branch**
 
 ### ⚠️ Ask First
 
@@ -142,7 +157,7 @@ These boundaries apply to ALL agents and tasks. Specialized agents have addition
 2. **Commit secrets, credentials, or API keys** to the repository
 3. **Break ABI compatibility** on release branches (gz-sim8, gz-common5, etc.)
 4. **Remove failing tests** without fixing the underlying issue first
-5. **Commit directly to main** or release branches (always use PRs)
+5. **Commit directly to main** or stable branches (always use PRs)
 6. **Merge your own PRs** without required approvals
 7. **Copy code with incompatible licenses** into the repository
 8. **Push force to shared branches** (main, release branches)
