@@ -22,6 +22,7 @@ This agent acts as a generalist. For specialized tasks, refer to the following a
 - **docs-agent**: For documentation and Doxygen. See `.github/agents/docs-agent.md`.
 - **build-agent**: For building, compiling, and ABI compatibility. See `.github/agents/build-agent.md`.
 - **contribution-agent**: For git workflow and PR process. See `.github/agents/contribution-agent.md`.
+- **ros-gz-agent**: For releasing, testing and building ROS vendor packages. See `github/agents/ros-gz-agent.md`
 
 ---
 
